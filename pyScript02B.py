@@ -31,7 +31,7 @@
 ### ------------------------------------------------------------------
 
 'hello' + ' world!'             --> 'hello world!'
-"hello" + " wordl!"             --> 'hello world!'
+"hello" + " world!"             --> 'hello world!'
 
 
 
