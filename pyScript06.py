@@ -18,6 +18,7 @@ import sys # import the sys library
 sys.stdout.write("Hello goes to the screen!\n")  # Output to screen
 print("   Next: printing to the file!")
 
+#%%
 # Save the reference to sys.stdout (screen) so we can restore it later
 original = sys.stdout
 
@@ -29,6 +30,11 @@ sys.stdout = open('pyScript06.txt', 'a') # open file for appending ('a')
 print(">>> Hello! This should go to the file!")
 print(">>> Here's another line that should go to the file!")
 
+#%%
+#print(sys.stdout)
+
+
+#%%
 x = 5
 y = 10
 z = x + y
@@ -42,6 +48,9 @@ sys.stdout = original
 
 # Now any print statement will show on the screen (and not go to the file) 
 print("\n>> Exercise is done! Open file 'pyScript06.txt' <<")
+
+#%%
+print(sys.stdout)
 
 # # For more information, read the "sys" module documentation.
 
