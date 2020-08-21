@@ -1,0 +1,1 @@
+[['the', 3], ['and', 3], ['can', 3], ['data', 4], ['help', 4], ['about', 5], ['virus', 5], ['public', 6], ['health', 6], ['tactics', 7], ['Emerging', 8], ['thoughtful', 10]]
