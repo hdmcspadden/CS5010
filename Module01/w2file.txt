@@ -1,0 +1,2 @@
+This is line 1 in w2file
+This is line 2 in w2file
