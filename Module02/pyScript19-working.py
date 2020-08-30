@@ -2,8 +2,9 @@
 # CS 5010
 # ACtivity: Module 2 Live Session Assignment: Python
 # Learning Python (Python version: 3)
-# H. Diana McSpadden hdm5s
-# XXXXXXXXXXXXXXXXXXXXXXXX
+# H. Diana McSpadden: hdm5s
+# Srinivas Chivaluri: spc6ph
+# Jing Huang: jh4yd
 # Topics:
 #   - Object-oriented programming (OOP) - Student Class
 
@@ -11,13 +12,16 @@ class Student:
     # fields: name, id, grades(a list)
     
     #Local variable
-    grades = [] # initially empty
+    #grades = [] # initially empty
     
-    #def __init__(self, name, id, grades = []):  # constructor
     def __init__(self, name, id):  # constructor
+    #def __init__(self, name, id):  # constructor
         self.name = name
         self.id = id
         self.grades = []
+        
+    def __str__(self):
+        return("Name : {}, ID : {}, Grades : {}".format(self.name, self.id, self.grades))
     
     def addGrade(self, grade): # add the grade to the list of grades
         self.grades.append(grade)
@@ -28,6 +32,9 @@ class Student:
             grds += str(grade) + ' '  # assign each grade to the string grds
         return grds
     
+    def average(self):
+        return sum(self.grades) / len(self.grades) 
+    
 #==================================================
     
 #student1 = Student('Jones', '123', [])
@@ -37,6 +44,11 @@ student1.addGrade(88)
 student1.addGrade(72)
 student1.addGrade(100)
 print("Grades: " + student1.showGrades()) # showing grades for student1
+print("Average: " + str(student1.average()))
+print("==========")
+
+print(student1)
+print("==========")
 #print(student1) # Will NOT work, since we do not have a "to-string" (__str__) method
 # Output of the above line will be a memory address like:
 #      <__main__.Student object at 0x00000220B8611BE0>
@@ -50,14 +62,21 @@ print("Grades: " + student1.showGrades()) # showing grades for student1
 # For now, the above file is fine for the above scenario. 
 
 # =============================================================================
-#s2 = Student('Clayton', '115', [])
 s2 = Student('Clayton', '115')
 print(str(s2.name) + ', ' + str(s2.id)) 
 s2.addGrade(85)
 s2.addGrade(95)
 s2.addGrade(99)
+print("Average: " + str(s2.average()))
 print("Grades: " + s2.showGrades())  # !!!
+print("==========")
 
-print(str(student1.name) + ', ' + str(student1.id)) # Output: Jones, 123
-print("Grades: " + student1.showGrades()) # showing grades for student1
-# =============================================================================
+
+s3 = Student('Diana', '6363')
+print(str(s3.name) + ', ' + str(s3.id)) 
+s3.addGrade(99)
+s3.addGrade(100)
+s3.addGrade(100)
+print("Average: " + str(s3.average()))
+print("Grades: " + s3.showGrades())  # !!!
+print("==========")
