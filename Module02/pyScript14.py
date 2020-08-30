@@ -40,8 +40,8 @@ def numVowels(string):
     count = 0
     for i in range(len(string)):
         if string[i] == "a" or string[i] == "e" or \
-           string[i] == "i" or string[i] == "o" or \
-           string[i] == "u":
+             string[i] == "i" or string[i] == "o" or \
+             string[i] == "u":
            count += 1 # increment count
     return count
                  
@@ -57,6 +57,8 @@ strng = input("Enter a string: ")
 print("There are " + str(numVowels(strng)) + " vowels in the string.")
     
 print("===========================================")    
+
+#%%
 
 # Using a conversion program to convert *F to *C and vice versa
 def ftoc(temp):  # *F to *C
@@ -79,6 +81,7 @@ converted = convert(temp, scale)
 print(temp, converted, scale)
 
 print("===========================================")
+#%%
 
 # Predicate functions - often used as helper functions that return True or False
 
@@ -101,7 +104,7 @@ theStrng = input("Enter a string: ")
 print("There are " + str(numVowels(theStrng)) + " vowels in the string.")
 
 print("===========================================")
-
+#%%
 # Calculating tax on a given amount
 
 # Writing two functions:
