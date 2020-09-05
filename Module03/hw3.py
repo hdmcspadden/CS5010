@@ -224,6 +224,19 @@ Create a to-string (_ _str_ _) method that prints “Account number 1234” on o
 on the next line (example with account number of 1234 and balance of 2000).
 '''
 
+## TO DO: COMMENT CODE, ADD INT, FLOAT ERROR HANDLING, PRINT 0.00 format for balances
+
+# *** BASE CLASS *** #
+class ACCOUNT:
+   def __init__(self, accountNumber, balance):  # constructor
+      self.accountNumber = accountNumber
+      self.balance = balance
+      
+   def __str__(self):
+        return "Account number {accountnumber} \nBalance: {balance}".format(accountnumber = str(self.accountNumber), balance = str(self.balance))
+
+acnt1 = ACCOUNT(1234,2000)
+print(acnt1)
 '''
 Create another class called CHECKING. This class should inherit from the Account class. 
 Therefore, the Checking class is the derived class.
@@ -251,6 +264,44 @@ To test this out:
     (6) print check1 out.
 '''
 
+## TO DO: COMMENT CODE, ADD INT, FLOAT ERROR HANDLING, PRINT 0.00 format for balances
+
+class CHECKING(ACCOUNT):
+    def __init__(self, accountNumber, balance, fee):  # constructor
+      ACCOUNT.__init__(self, accountNumber, balance)
+      self.fee = fee
+      
+    def __str__(self):
+      strReturn = "Account type: Checking\n"
+      strReturn += ACCOUNT.__str__(self)
+      return strReturn
+      
+    def getFee(self):
+        return self.fee.fee
+    
+    def deposit(self, amount):
+        self.balance += amount
+        
+    def withdrawal(self, amount):
+        if(amount + self.fee > self.balance):
+            print("Insufficient funds")
+        else:
+            self.balance = self.balance - self.fee - amount
+
+
+check1 = CHECKING(1234,500,.50)
+
+print(check1)
+
+check1.withdrawal(100)
+
+print(check1)
+
+check1.deposit(200)
+
+print(check1)
+
+check1.withdrawal(2000)
 
 
 
