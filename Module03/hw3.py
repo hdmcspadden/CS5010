@@ -120,7 +120,7 @@ but sort by smallest size first (Hint: Search for a method that can sort a list.
 What do you have to do when you are trying to sort a list of tuples?w)
 '''
 def getLength(item):
-    return item[1]
+    return item[0]
 
 words.sort(key=getLength)
 #print(words)
@@ -137,7 +137,83 @@ and the last one illustrating the use of reduce.
 Rewrite these three examples without using the map(), filter(), and functools.reduce() functions.
 '''
 
+# function to square a number.
+# will use in rewrite of map functionality
+def square(number):
+    return number * number 
 
+
+# function to identify even numbers
+# will use in rewrite of the filter functionality
+def even(number):
+    if number % 2 == 0:
+        return True
+    else:
+        return False 
+
+# function to add two numbers
+# will use in rewrite of the reduce functionality
+def sum(x,y):
+    return x + y
+
+# create a list of numbers to use 1-10
+numbers = list(range(1,11))
+#print(numbers)
+
+# Here is my rewrite of map, without using map()
+def pseudosqauremap(numbers):
+    ''' pseudosquaremap takes a list of numbers and returns a list of the squares of the numbers '''
+    newnumbers = []
+    
+    for number in numbers:
+        newnumbers.append(number * number)
+        
+    return newnumbers
+
+# call pseudosquaremap
+print(pseudosqauremap(numbers))
+    
+# Here is my rewrite of filter, without using filter()
+def pseudoevenfilter(numbers):
+    '''pseudoevenfilter takes a list of numbers and returns a list of the even numbers from the input list'''
+    newnumbers = []
+    
+    for number in numbers:
+        if (even(number)):
+            newnumbers.append(number)
+        
+    return newnumbers
+
+# call pseudoevenfilter
+print(pseudoevenfilter(numbers))
+
+# Here is my rewrite of reduce, without using reduce
+def pseudoaddreduce(numbers):
+    '''pseudoaddreduce takes a list of numbers adding each number to the su of the previous two numbers in the list'''
+    # initialize how the return variable in case the input list is empty
+    reducedSumNumber = 0
+    
+    # get the length of the list
+    listLength = len(numbers)
+    
+    # if the list has items ...
+    if (listLength > 0):
+                
+        # initialize a counter
+        i = 0
+        # while counter is less than the list length add the numbers together
+        while i < listLength:
+            reducedSumNumber = reducedSumNumber + numbers[i]
+            i += 1    
+    else:
+        # empty list, return 0
+        reducedSumNumber = 0
+    
+    return reducedSumNumber
+
+
+# call pseudoaddreduce
+print(str(pseudoaddreduce(numbers)))
 #%%
 #Classes and Inheritance: (4 pts)
 ''' 
