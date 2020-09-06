@@ -229,13 +229,18 @@ on the next line (example with account number of 1234 and balance of 2000).
 # *** BASE CLASS *** #
 class ACCOUNT:
    def __init__(self, accountNumber, balance):  # constructor
-      self.accountNumber = accountNumber
-      self.balance = balance
+      self.accountNumber = accountNumber 
+      try:
+          self.balance = float(balance)
+      except ValueError:
+          self.balance = 0
+          print("Balance must be a valid dollar amount.")
       
    def __str__(self):
-        return "Account number {accountnumber} \nBalance: {balance}".format(accountnumber = str(self.accountNumber), balance = str(self.balance))
+        return "Account number {} \nBalance: {:.2f}".format(str(self.accountNumber), self.balance)
 
-acnt1 = ACCOUNT(1234,2000)
+# create and print the account object                     
+acnt1 = ACCOUNT(1234, 2000)
 print(acnt1)
 '''
 Create another class called CHECKING. This class should inherit from the Account class. 
@@ -269,38 +274,55 @@ To test this out:
 class CHECKING(ACCOUNT):
     def __init__(self, accountNumber, balance, fee):  # constructor
       ACCOUNT.__init__(self, accountNumber, balance)
-      self.fee = fee
-      
+      try:
+          self.fee = float(fee) # fee property added to the checking class
+      except ValueError:
+          self.fee = 0
+          print("Fee must be a valid dollar amount.")
+        
     def __str__(self):
-      strReturn = "Account type: Checking\n"
+      strReturn = "Account type: Checking\n" # additional part of __str__ for the checking class
       strReturn += ACCOUNT.__str__(self)
       return strReturn
       
     def getFee(self):
-        return self.fee.fee
+        return self.fee
     
     def deposit(self, amount):
-        self.balance += amount
+        try:
+            self.balance += float(amount) # add the deposit amount to self.balance
+        except ValueError:
+            print("Deposit amount must be valid dollar amount.")
         
     def withdrawal(self, amount):
-        if(amount + self.fee > self.balance):
-            print("Insufficient funds")
-        else:
-            self.balance = self.balance - self.fee - amount
+        # check the current balance
+        try:
+            if(float(amount) + self.fee > self.balance):
+                print("Insufficient funds") # not enough funds
+            else:
+                self.balance = self.balance - self.fee - amount # deduct the withdrawal from self.balance
+        except ValueError:
+            print("Withdrawal amount must be a valid dollar amount.")
 
-
+# create checking object
 check1 = CHECKING(1234,500,.50)
 
+# test printing check1 object
 print(check1)
 
+# test withdrawal
 check1.withdrawal(100)
 
+# test printing to check that withdrawal worked
 print(check1)
 
+# test deposit
 check1.deposit(200)
 
+# test printing to check that deposit worked
 print(check1)
 
+# try to withdraw more than balance
 check1.withdrawal(2000)
 
 
