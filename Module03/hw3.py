@@ -64,13 +64,15 @@ Remember to mimic the print statements after each try exactly like the original 
 (therefore, remember to keep track of which try the guesser is on to output the appropriate response).
 '''
 print("Here is a guessing game. Try until you get it right.")
-tries = 0
-answer = "Diana"
-response = ""
+tries = 0 # counter for number of tries
+answer = "Diana" # set the correct answer
+response = "" # prime the response
+
 while response != answer:
-    tries += 1
+    tries += 1 # set a counter to track how many times the question has been asked
     response = input("This is try number {}. What is my name? ".format(str(tries)))
     
+# when we exit the loop it indicates a correct answer
 print("That is right!")
     
 
@@ -82,12 +84,15 @@ Using ONE for-loop, count the number of each of the vowels in a string
 Display how many a’s, e’s, i’s, o’s, and u’s are in the sentence.
 '''
 sentence = "are you suggesting coconuts migrate"
-dictVowelCount = {"a": 0, "e": 0, "i" : 0, "o": 0, "u": 0}
+dictVowelCount = {"a": 0, "e": 0, "i" : 0, "o": 0, "u": 0} # initialize the count of vowels
 
+# for each letter in the sentence, if the letter is in our vowel dictionary, 
+#   add one to that letter's count
 for letter in sentence:
     if letter in dictVowelCount:
         dictVowelCount[letter] += 1
-    
+
+# print the resulting dictionary with vowel counts
 print(dictVowelCount)
 
 
@@ -104,7 +109,7 @@ Put the words into a list (Hint: How are the words separated?).
 Separating words can be done before the list comprehension.
 '''
 
-listLongSentence = longsentence.split(' ')
+listLongSentence = longsentence.split(' ') # split the sentence on spaces
 #print(listLongSentence)
 
 '''
@@ -120,11 +125,14 @@ but sort by smallest size first (Hint: Search for a method that can sort a list.
 What do you have to do when you are trying to sort a list of tuples?w)
 '''
 def getLength(item):
+    # gets the item on which to sort by length
     return item[0]
 
+# call sort on the words list using the length of each item
 words.sort(key=getLength)
 #print(words)
 
+# for each word list [word, len(word)] print the word and its length
 for wordlist in words:
     print("{w} is {length} characters in length".format(w=wordlist[0],length=wordlist[1]))
 
@@ -224,12 +232,12 @@ Create a to-string (_ _str_ _) method that prints “Account number 1234” on o
 on the next line (example with account number of 1234 and balance of 2000).
 '''
 
-## TO DO: COMMENT CODE, ADD INT, FLOAT ERROR HANDLING, PRINT 0.00 format for balances
-
 # *** BASE CLASS *** #
 class ACCOUNT:
    def __init__(self, accountNumber, balance):  # constructor
-      self.accountNumber = accountNumber 
+      self.accountNumber = accountNumber # set account number
+      
+      # throw exception if balance is not a valid float
       try:
           self.balance = float(balance)
       except ValueError:
@@ -237,6 +245,7 @@ class ACCOUNT:
           print("Balance must be a valid dollar amount.")
       
    def __str__(self):
+       # return account number and balance (balance in 0.00 format)
         return "Account number {} \nBalance: {:.2f}".format(str(self.accountNumber), self.balance)
 
 # create and print the account object                     
@@ -273,7 +282,9 @@ To test this out:
 
 class CHECKING(ACCOUNT):
     def __init__(self, accountNumber, balance, fee):  # constructor
-      ACCOUNT.__init__(self, accountNumber, balance)
+      ACCOUNT.__init__(self, accountNumber, balance) # call base class constructor
+      
+      # validate that fee is a valid float
       try:
           self.fee = float(fee) # fee property added to the checking class
       except ValueError:
@@ -281,14 +292,18 @@ class CHECKING(ACCOUNT):
           print("Fee must be a valid dollar amount.")
         
     def __str__(self):
+      # add the Account type: Checking to the __str__ of the base class
       strReturn = "Account type: Checking\n" # additional part of __str__ for the checking class
       strReturn += ACCOUNT.__str__(self)
       return strReturn
       
     def getFee(self):
+        # return the fee for the object
         return self.fee
     
     def deposit(self, amount):
+        # throw exception if amount is not valid float
+        # if valid add the deposit amount to the balance
         try:
             self.balance += float(amount) # add the deposit amount to self.balance
         except ValueError:
@@ -296,6 +311,9 @@ class CHECKING(ACCOUNT):
         
     def withdrawal(self, amount):
         # check the current balance
+        
+        # throw error is amount is not a valid dollar amount
+        # else, check balance, if enough, then deduct from balance, else return Insufficient funds message
         try:
             if(float(amount) + self.fee > self.balance):
                 print("Insufficient funds") # not enough funds
