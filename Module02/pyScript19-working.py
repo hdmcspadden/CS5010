@@ -14,11 +14,13 @@ class Student:
     #Local variable
     #grades = [] # initially empty
     
-    def __init__(self, name, id):  # constructor
+    def __init__(self, name, id, grades = None):  # constructor
     #def __init__(self, name, id):  # constructor
         self.name = name
         self.id = id
         self.grades = []
+        if grades != None:
+            self.grades = grades
         
     def __str__(self):
         return("Name : {}, ID : {}, Grades : {}".format(self.name, self.id, self.grades))
@@ -72,11 +74,9 @@ print("Grades: " + s2.showGrades())  # !!!
 print("==========")
 
 
-s3 = Student('Diana', '6363')
+s3 = Student('Diana', '6363', [99,100,100])
 print(str(s3.name) + ', ' + str(s3.id)) 
-s3.addGrade(99)
-s3.addGrade(100)
-s3.addGrade(100)
+s3.addGrade(98)
 print("Average: " + str(s3.average()))
 print("Grades: " + s3.showGrades())  # !!!
 print("==========")
