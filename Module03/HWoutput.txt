@@ -1,0 +1,88 @@
+Name of activity: Homework 2: Python I (Module 3))
+Name: H. Diana McSpadde
+UID: hdm5s
+
+Date: 9/8/2020
+
+runfile('C:/Users/Diana McSpadden/Documents/UVaCode/Python/CS5010/Module03/hw3.py', wdir='C:/Users/Diana McSpadden/Documents/UVaCode/Python/CS5010/Module03')
+One of my favoritesong is 'Castanets'.
+A great song fro the 1980's is 'Girls Just Wanna Have Fun'.
+Fav song #1: Castanets
+Fav song #2: Soy Yo
+Fav song #3: Ooh La La
+Fav song #4: Long Slow Goodbye
+Fav song #5: Respect
+Fav song #6: Let My People Go
+Fav song #7: Working Woman
+Fav song #8: Lust For Life
+Fav song #9: 99 Pounds
+Fav song #10: Girls Just Wanna Have Fun
+
+What is your name? Diana
+
+Give me a number, any number: 2
+
+And another number, any number: 2
+Hi, Diana! Multiplying 2.0 and 2.0 is: 4.0
+Here is a guessing game. Try until you get it right.
+
+This is try number 1. What is my name? sdfs
+
+This is try number 2. What is my name? sdfsd
+
+This is try number 3. What is my name? Diana
+That is right!
+{'a': 2, 'e': 3, 'i': 2, 'o': 3, 'u': 3}
+1 is 1 characters in length
+450-foot is 8 characters in length
+5800 is 4 characters in length
+Amami is 5 characters in length
+China is 5 characters in length
+Gulf is 4 characters in length
+Japan is 5 characters in length
+Livestock is 9 characters in length
+New is 3 characters in length
+Okinawa is 7 characters in length
+Oshima is 6 characters in length
+The is 3 characters in length
+Wednesday is 9 characters in length
+Zealand is 7 characters in length
+a is 1 characters in length
+a is 1 characters in length
+a is 1 characters in length
+call is 4 characters in length
+cargo is 5 characters in length
+cows is 4 characters in length
+distress is 8 characters in length
+early is 5 characters in length
+en is 2 characters in length
+from is 4 characters in length
+island is 6 characters in length
+issued is 6 characters in length
+near is 4 characters in length
+north is 5 characters in length
+of is 2 characters in length
+of is 2 characters in length
+of is 2 characters in length
+route is 5 characters in length
+ship is 4 characters in length
+some is 4 characters in length
+the is 3 characters in length
+time is 4 characters in length
+to is 2 characters in length
+with is 4 characters in length
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+[2, 4, 6, 8, 10]
+55
+Account number 1234 
+Balance: 2000.00
+Account type: Checking
+Account number 1234 
+Balance: 500.00
+Account type: Checking
+Account number 1234 
+Balance: 399.50
+Account type: Checking
+Account number 1234 
+Balance: 599.50
+Insufficient funds
