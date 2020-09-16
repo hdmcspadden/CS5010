@@ -20,6 +20,8 @@ skips = beginningRows + endingRows
 
 print(skips)
 
+#%%
+
 # One of the parameters is "usecols". Used to find the columns of interest.
 useTheseCols = list(range(0,13)) # Grabbing columns including the first
 
@@ -31,7 +33,11 @@ print("  *** Using file: Key_Measures_December_2013_Mod.csv ***")
 
 # Print the first 5 data points (using "head")
 print("\n****************")
+
+#%%
+
 print('*** The first 5 data points\n',df.head(6))
+
 
 # Print the last 5 data points (using "tail")
 print("\n****************", end='')
@@ -67,10 +73,21 @@ print("\n****************", end='')
 print('\n**** Visits greater than 100000 and Average Visits Per Visitor > 50:')
 print(df[(df['Total Visits (000)'] > 100000) & (df['Average Visits per Visitor'] > 50)])
 
+#%%
 
-# Try finding minimum and maximum views that aren't parents??
+# Rows with Yahoo in the Webpage Reference column
+print('\nOnly Yahoo results:\n',df[df['Webpage Reference'].str.contains('Yahoo')])
 
-# Try finding top search 
+#%%
+# not meaningful because of parent-child total rows, but still gets the mean of the 'Total Unique Visitors (000)' column
+averageVisitors = mean(df['Total Unique Visitors (000)'])
+print(averageVisitors)
 
-# Try finding sum of all sports
+#%%
+# Top 10 sites by Average Daily Visitors (000)
+print('\nOnly Top 10 sites by Average Daily Visitors:\n',df.nlargest(10,['Average Daily Visitors (000)']))
 
+#%%
+
+# Top 20 where Rows where % Reach > 1
+print('\n**** Top 20 where % Reach > 1\n',df[df['% Reach'] > 1.0].head(20))
