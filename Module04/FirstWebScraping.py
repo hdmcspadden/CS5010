@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Actiity: Homework: Python and Web Scraper
+Actiity: Homework 3: Python and Web Scraper
 Name: H. Diana McSpadden
 UI: hdm5s
 """
