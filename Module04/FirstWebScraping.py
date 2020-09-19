@@ -3,6 +3,20 @@
 Actiity: Homework 3: Python and Web Scraper
 Name: H. Diana McSpadden
 UI: hdm5s
+
+References:
+
+AllSides. (n.d.). AllSides Media Bias Chart [Illustration]. AllSides. https://www.allsides.com/sites/default/files/AllSidesMediaBiasChart-Version2.jpg
+
+Beautiful Soup - Navigating by Tags - Tutorialspoint. (n.d.). TutorialsPoint. Retrieved September 14, 2020, from https://www.tutorialspoint.com/beautiful_soup/beautiful_soup_navigating_by_tags.htm
+
+Kumar, N., the_galaxy_hunter, & Hasan, S. (2020, August 20). Implementing Web Scraping in Python with BeautifulSoup. GeeksforGeeks. https://www.geeksforgeeks.org/implementing-web-scraping-python-beautiful-soup/?ref=lbp
+
+Real Python. (2020, August 21). Beautiful Soup: Build a Web Scraper With Python. https://realpython.com/beautiful-soup-web-scraper-python/#part-3-parse-html-code-with-beautiful-soup
+
+Tokenizing Words and Sentences with NLTK. (n.d.). PythonProgramming. Retrieved September 15, 2020, from https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/
+
+
 """
 # Import Libraries I will need
 import requests # import requests library
@@ -80,7 +94,7 @@ except Exception as err:
 
 #%%
 
-#NBC NEWS
+#NPR NEWS
 # retrieve the news stories npr.org's news page identified as their TOP NEWS and store the site headline, URL, and scrape date time
 try:
     articlesTable = retrieveLoopableSoupFindAll('https://www.npr.org/sections/news/', 'h2', {'class': 'title'})

@@ -1,0 +1,8 @@
+
+runfile('C:/Users/Diana McSpadden/Documents/UVaCode/Python/CS5010/Module05/AStudent_Class_addGrade_test.py', wdir='C:/Users/Diana McSpadden/Documents/UVaCode/Python/CS5010/Module05')
+Reloaded modules: AStudent_Class
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK
