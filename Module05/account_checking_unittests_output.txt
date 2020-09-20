@@ -1,0 +1,7 @@
+runfile('C:/Users/Diana McSpadden/Documents/UVaCode/Python/CS5010/Module05/Account_Checking_test.py', wdir='C:/Users/Diana McSpadden/Documents/UVaCode/Python/CS5010/Module05')
+Reloaded modules: ACCOUNT_CHECKING_CLASS
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.006s
+
+OK
