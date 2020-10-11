@@ -30,12 +30,17 @@ def linearSearch(target, my_list):
     indexOfItem = sentinel
     
     for idx, item in enumerate(my_list):
+        #print(str(idx) + ", ")
         if (item == target):
             indexOfItem = idx
             break
         
     return indexOfItem
 
+listOfNumbers = [-17,-9,-4,-1,0,2,3,4,8,10,16,29,40,62,77]
+linearSearch(8,listOfNumbers)
+
+"""
 # Test the function
 # create a list
 testList1 = [0,1,2,3,4,5,6,7,8,9,'0','1','2','3','4','5','6','7','8','9']
@@ -51,3 +56,4 @@ print(testIndex2)
 # test something not there
 testIndex3 = linearSearch([0,0],testList1)
 print(testIndex3)
+"""

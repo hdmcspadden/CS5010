@@ -37,6 +37,7 @@ def BinarySearch(item_list, target):
     while low <= high:
             
         mid = floor((low + high)/2) # mid, is the floor of sum of low and high divided by 2.
+        #print("Index Tried: " + str(mid) + ", ")
         
         if (item_list[mid] == target):
             # we found it, return True
@@ -51,8 +52,13 @@ def BinarySearch(item_list, target):
             high = mid - 1
     
     return False
-    
-    
+
+
+listOfNumbers = [-17,-9,-4,-1,0,2,3,4,8,10,16,29,40,62,77]
+BinarySearch(listOfNumbers,8)
+
+
+"""    
 # create a list that is ascending sorted
 primesNumbersBetween1And100 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]   
 
@@ -64,7 +70,7 @@ for x in range(10):
         print("The random number {} IS in the prime list.".format(testNum))
     else:
         print("The random number {} is NOT is the prime list.".format(testNum))
-      
+"""  
   
 
     
