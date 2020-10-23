@@ -2,7 +2,7 @@
 """
 Activity: Homework 4: Testing and Debugging
 Name: H. Diana McSpadden
-UID: hdm5s
+UID: hdm5sI 
 """
 
 # This is the test code for the ACCOUNTING and CHECKING CLASSES
